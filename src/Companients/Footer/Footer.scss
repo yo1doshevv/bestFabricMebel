@@ -1,0 +1,25 @@
+.footer{
+    width: 100%;
+    margin-bottom: 1px;
+    background-color: black;
+    &_wrapper{
+        width: 80%;
+        margin: 0 auto;
+        color: rgb(217, 215, 215);
+        padding: 23px 0;
+    }
+}
+
+@media (max-width: 768px){
+    .footer{
+        width: 750px;
+        margin-bottom: 1px;
+        background-color: black;
+        &_wrapper{
+            width: 80%;
+            margin: 0 auto;
+            color: rgb(217, 215, 215);
+            padding: 23px 0;
+        }
+    }
+}

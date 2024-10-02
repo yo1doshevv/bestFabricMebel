@@ -1,0 +1,114 @@
+.colec{
+    width: 100%;
+    &_wrapper{
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 50px;
+    }
+    &_input input{
+        border: none;
+        outline: none;
+        background-color: #f4f3f3;
+        padding: 10px 20px;
+        border-radius: 10px;
+        font-size: 15px;
+        position: relative;
+        top: -785px;
+    }
+    &_icon{
+        position: relative;
+        left: 185px;
+        top: -830px;
+        color: red;
+    }
+    &_colection p{
+        font-size: 13px;
+        color: #898686;
+        position: relative;
+        top: -820px;
+        left: 15px;
+    }
+    &_colection p:hover{
+        font-size: 13.2px;
+        cursor: pointer;
+        color: rgb(241, 51, 51);
+    }
+    &_colection h2{
+        font-size: 30px;
+        position: relative;
+        top: -819px;
+    }
+    &_title h2{
+        font-size: 22px;
+    }
+    &_title p{
+        position: relative;
+        top: -12px;
+        color: #898686;
+    }
+    &_img img{
+        width: 220px;
+        height: 160px;
+        border-radius: 15px;
+    }
+    &_text{
+        position: relative;
+        top: -18px;
+        font-size: 15px;
+        color: #3e4958;
+    }
+    &_right{
+        margin-top: 50px;
+    }
+    &_box{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .colec {
+        &_wrapper {
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        &_input input {
+            width: 100%;
+            top: -50px;
+        }
+
+        &_icon {
+            left: 0;
+            top: -40px;
+        }
+
+        &_colection p {
+            font-size: 12px;
+            top: -30px;
+        }
+
+        &_colection h2 {
+            font-size: 24px;
+            top: -20px;
+        }
+
+        &_img img {
+            width: 180px;
+            height: 130px;
+        }
+
+        &_text {
+            font-size: 14px;
+            top: -10px;
+        }
+
+        &_box {
+            gap: 5px;
+        }
+    }
+}

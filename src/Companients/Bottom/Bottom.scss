@@ -1,0 +1,90 @@
+.bottom{
+    width: 100%;
+    color: rgb(63, 66, 114);
+    margin-bottom: 80px;
+    &_wrapper{
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &_img img{
+        width: 150px;
+        height: 40px;
+    }
+    &_text p{
+        font-size: 10px;
+    }
+    &_input{
+        display: flex;
+    }
+    &_input input{
+        position: relative;
+        width: 300px;
+        height: 40px;
+        border-radius: 10px;
+        border: none;
+        outline: none;
+        background-color: rgb(232, 229, 229);
+    }
+    &_input button{
+        position: absolute;
+        border-radius: 4px;
+        border: none;
+        outline: none;
+        background-color: rgb(239, 41, 41);
+        color: white;
+        width: 100px;
+        height: 30px;
+        right: 10px;
+        margin-top: 5px;
+    }
+}
+
+@media (max-width: 768px){
+    .bottom{
+        width: 100%;
+        color: rgb(63, 66, 114);
+        margin-bottom: 80px;
+        &_wrapper{
+            width: 80%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            
+        }
+        &_img img{
+            width: 150px;
+            height: 40px;
+        }
+        &_text p{
+            font-size: 10px;
+        }
+        &_input{
+            display: flex;
+        }
+        &_input input{
+            position: relative;
+            width: 300px;
+            height: 40px;
+            border-radius: 10px;
+            border: none;
+            outline: none;
+            background-color: rgb(232, 229, 229);
+        }
+        &_input button{
+            position: absolute;
+            border-radius: 4px;
+            border: none;
+            outline: none;
+            background-color: rgb(239, 41, 41);
+            color: white;
+            width: 80px;
+            height: 20px;
+            right: 170px;
+            margin-top: 10px;
+        }
+    }}
