@@ -63,12 +63,12 @@ img{
             margin: 0 auto;
         }
         &_nav ul{
-            display: none;
+            display: "";
         }
     }
 }
 
-@media(max-width: 350px) {
+@media(max-width: 380px) {
     .navbar{
         &_wrapper{
             width: 80%;
