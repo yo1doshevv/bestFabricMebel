@@ -55,7 +55,7 @@ img{
     height: 100px;
 }
 
-@media (max-width: 768px){
+@media(max-width: 768px){
     .navbar{
         width: 768px;
         &_wrapper{
@@ -67,3 +67,20 @@ img{
         }
     }
 }
+
+@media(max-width: 350px) {
+    .navbar{
+        &_wrapper{
+            width: 80%;
+            margin: 0 auto;
+        }
+        &_nav ul{
+            display: none;
+        }
+    }
+    img {
+      width: 150px;
+      height: 75px;
+    }
+  }
+  

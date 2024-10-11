@@ -1,41 +1,61 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from "react";
 import "./Pg2.scss";
-import SearchIcon from '@mui/icons-material/Search';
-import Aos from 'aos';
-
+import SearchIcon from "@mui/icons-material/Search";
+import Aos from "aos";
+import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+import ReactPaginate from "react-paginate";
+import Slider from "react-slick";
 
 const Pg2 = () => {
+  const { t, i18n } = useTranslation();
+  const [leng, setLanguage] = useState("");
+  const Naviget = useNavigate();
 
- const [showData] = useState([
-  {
-    id: 21,
-    name: "Squares",
-    img: "/Img/winter1.jpg",
-    text: "Bed linen is a household item and bedroom decor designed for comfort and beauty. You can choose from a variety of bed sets that include sheets, blankets, pillow crafts and other accessories. They have various designs, prints, embroideries or other design elements. They are easy and quick to clean and clean. They are made from soft materials and they make your bedrooms cozy and cozy.",
-    title: "Bedding set Squares",
-    category: "Winter collection",
-    Material: "100% cotton flannel",
-    Pillowcase: "50x70 cm (2 pcs.)",
-    sheet: "Bed sheet:",
-    Duvet: "Duvet cover",
-    Size: "Special size",
-    Manufacturer: "Bukhara Natural Product",
-  },
-  {
-    id: 30,
-    name: "Lavender roses",
-    img: "/Img/winter2.jpg",
-    text: "Bed linen is a household item and bedroom decor designed for comfort and beauty. You can choose from a variety of bed sets that include sheets, blankets, pillow crafts and other accessories. They have various designs, prints, embroideries or other design elements. They are easy and quick to clean and clean. They are made from soft materials and they make your bedrooms cozy and cozy.",
-    title: "Bedding set Lavender roses",
-    category: "Winter collection",
-    Material: "100% cotton flannel",
-    Pillowcase: "50x70 cm (2 pcs.)",
-    sheet: "Bed sheet:",
-    Duvet: "Duvet cover",
-    Size: "Special size",
-    Manufacturer: "Bukhara Natural Product",
-  },
-  {
+  const hendlclik = (id) => {
+    Naviget(`/Data/${id}`);
+  };
+
+  var settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+
+  const [searchTerm, setSearchTerm] = useState(""); // Qidiruv so'zi uchun state
+  const [showDataa] = useState([
+    {
+      id: 21,
+      name: "Squares",
+      img: "/Img/winter1.jpg",
+      text: "Bed linen is a household item and bedroom decor designed for comfort and beauty. You can choose from a variety of bed sets that include sheets, blankets, pillow crafts and other accessories. They have various designs, prints, embroideries or other design elements. They are easy and quick to clean and clean. They are made from soft materials and they make your bedrooms cozy and cozy.",
+      title: "Bedding set Squares",
+      category: "Winter collection",
+      Material: "100% cotton flannel",
+      Pillowcase: "50x70 cm (2 pcs.)",
+      sheet: "Bed sheet:",
+      Duvet: "Duvet cover",
+      Size: "Special size",
+      Manufacturer: "Bukhara Natural Product",
+    },
+    {
+      id: 30,
+      name: "Lavender roses",
+      img: "/Img/winter2.jpg",
+      text: "Bed linen is a household item and bedroom decor designed for comfort and beauty. You can choose from a variety of bed sets that include sheets, blankets, pillow crafts and other accessories. They have various designs, prints, embroideries or other design elements. They are easy and quick to clean and clean. They are made from soft materials and they make your bedrooms cozy and cozy.",
+      title: "Bedding set Lavender roses",
+      category: "Winter collection",
+      Material: "100% cotton flannel",
+      Pillowcase: "50x70 cm (2 pcs.)",
+      sheet: "Bed sheet:",
+      Duvet: "Duvet cover",
+      Size: "Special size",
+      Manufacturer: "Bukhara Natural Product",
+    },
+    {
       id: 23,
       name: "Circle",
       img: "/Img/winter3.jpg",
@@ -140,146 +160,6 @@ const Pg2 = () => {
       text: "Bed linen is a household item and bedroom decor designed for comfort and beauty. You can choose from a variety of bed sets that include sheets, blankets, pillow crafts and other accessories. They have various designs, prints, embroideries or other design elements. They are easy and quick to clean and clean. They are made from soft materials and they make your bedrooms cozy and cozy.",
       title: "Bedding set Lavender roses",
       category: "Winter collection",
-      Material: "100% cotton flannel",
-      Pillowcase: "50x70 cm (2 pcs.)",
-      sheet: "Bed sheet:",
-      Duvet: "Duvet cover",
-      Size: "Special size",
-      Manufacturer: "Bukhara Natural Product",
-    },
-    {
-      id: 11,
-      name: "Vintage style",
-      img: "/Img/summer1.jpg",
-      text: "Bed linen is a household item and bedroom decor designed for comfort and beauty. You can choose from a variety of bed sets that include sheets, blankets, pillow crafts and other accessories. They have various designs, prints, embroideries or other design elements. They are easy and quick to clean and clean. They are made from soft materials and they make your bedrooms cozy and cozy.",
-      title: "Bedding set Squares",
-      category: "Summer collection",
-      Material: "100% cotton flannel",
-      Pillowcase: "50x70 cm (2 pcs.)",
-      sheet: "Bed sheet:",
-      Duvet: "Duvet cover",
-      Size: "Special size",
-      Manufacturer: "Bukhara Natural Product",
-    },
-    {
-      id: 12,
-      name: "fluttering dandelion",
-      img: "/Img/summer2.jpg",
-      text: "Bed linen is a household item and bedroom decor designed for comfort and beauty. You can choose from a variety of bed sets that include sheets, blankets, pillow crafts and other accessories. They have various designs, prints, embroideries or other design elements. They are easy and quick to clean and clean. They are made from soft materials and they make your bedrooms cozy and cozy.",
-      title: "Ikat bedding set",
-      category: "Summer collection",
-      Material: "100% cotton flannel",
-      Pillowcase: "50x70 cm (2 pcs.)",
-      sheet: "Bed sheet:",
-      Duvet: "Duvet cover",
-      Size: "Special size",
-      Manufacturer: "Bukhara Natural Product",
-    },
-    {
-      id: 13,
-      name: " French Riviera ",
-      img: "/Img/summer3.jpg",
-      text: "Bed linen is a household item and bedroom decor designed for comfort and beauty. You can choose from a variety of bed sets that include sheets, blankets, pillow crafts and other accessories. They have various designs, prints, embroideries or other design elements. They are easy and quick to clean and clean. They are made from soft materials and they make your bedrooms cozy and cozy.",
-      title: "Bedding set Circles",
-      category: "Summer collection",
-      Material: "100% cotton flannel",
-      Pillowcase: "50x70 cm (2 pcs.)",
-      sheet: "Bed sheet:",
-      Duvet: "Duvet cover",
-      Size: "Special size",
-      Manufacturer: "Bukhara Natural Product",
-    },
-    {
-      id: 14,
-      name: "Dolly the Sheep",
-      img: "/Img/summer4.jpg",
-      text: "Bed linen is a household item and bedroom decor designed for comfort and beauty. You can choose from a variety of bed sets that include sheets, blankets, pillow crafts and other accessories. They have various designs, prints, embroideries or other design elements. They are easy and quick to clean and clean. They are made from soft materials and they make your bedrooms cozy and cozy.",
-      title: "Bedding set Emerald (AB)",
-      category: "Summer collection",
-      Material: "100% cotton flannel",
-      Pillowcase: "50x70 cm (2 pcs.)",
-      sheet: "Bed sheet:",
-      Duvet: "Duvet cover",
-      Size: "Special size",
-      Manufacturer: "Bukhara Natural Product",
-    },
-    {
-      id: 15,
-      name: "Alpine herbs",
-      img: "/Img/summer5.jpg",
-      text: "Bed linen is a household item and bedroom decor designed for comfort and beauty. You can choose from a variety of bed sets that include sheets, blankets, pillow crafts and other accessories. They have various designs, prints, embroideries or other design elements. They are easy and quick to clean and clean. They are made from soft materials and they make your bedrooms cozy and cozy.",
-      title: "Bedding set Malachite",
-      category: "Summer collection",
-      Material: "100% cotton flannel",
-      Pillowcase: "50x70 cm (2 pcs.)",
-      sheet: "Bed sheet:",
-      Duvet: "Duvet cover",
-      Size: "Special size",
-      Manufacturer: "Bukhara Natural Product",
-    },
-    {
-      id: 16,
-      name: "Inspirational",
-      img: "/Img/summer6.jpg",
-      text: "Bed linen is a household item and bedroom decor designed for comfort and beauty. You can choose from a variety of bed sets that include sheets, blankets, pillow crafts and other accessories. They have various designs, prints, embroideries or other design elements. They are easy and quick to clean and clean. They are made from soft materials and they make your bedrooms cozy and cozy.",
-      title: "spring bedding set",
-      category: "Summer collection",
-      Material: "100% cotton flannel",
-      Pillowcase: "50x70 cm (2 pcs.)",
-      sheet: "Bed sheet:",
-      Duvet: "Duvet cover",
-      Size: "Special size",
-      Manufacturer: "Bukhara Natural Product",
-    },
-    {
-      id: 17,
-      name: "Green lotus",
-      img: "/Img/summer7.jpg",
-      text: "Bed linen is a household item and bedroom decor designed for comfort and beauty. You can choose from a variety of bed sets that include sheets, blankets, pillow crafts and other accessories. They have various designs, prints, embroideries or other design elements. They are easy and quick to clean and clean. They are made from soft materials and they make your bedrooms cozy and cozy.",
-      title: "Bedding set Autumn leaf fall (AB)",
-      category: "Summer collection",
-      Material: "100% cotton flannel",
-      Pillowcase: "50x70 cm (2 pcs.)",
-      sheet: "Bed sheet:",
-      Duvet: "Duvet cover",
-      Size: "Special size",
-      Manufacturer: "Bukhara Natural Product",
-    },
-    {
-      id: 18,
-      name: "Mountain cornflower",
-      img: "/Img/summer8.jpg",
-      text: "Bed linen is a household item and bedroom decor designed for comfort and beauty. You can choose from a variety of bed sets that include sheets, blankets, pillow crafts and other accessories. They have various designs, prints, embroideries or other design elements. They are easy and quick to clean and clean. They are made from soft materials and they make your bedrooms cozy and cozy.",
-      title: "Bed linen set Blue Breeze (AB)",
-      category: "Summer collection",
-      Material: "100% cotton flannel",
-      Pillowcase: "50x70 cm (2 pcs.)",
-      sheet: "Bed sheet:",
-      Duvet: "Duvet cover",
-      Size: "Special size",
-      Manufacturer: "Bukhara Natural Product",
-    },
-    {
-      id: 19,
-      name: "Sakura branch",
-      img: "/Img/summer9.jpg",
-      text: "Bed linen is a household item and bedroom decor designed for comfort and beauty. You can choose from a variety of bed sets that include sheets, blankets, pillow crafts and other accessories. They have various designs, prints, embroideries or other design elements. They are easy and quick to clean and clean. They are made from soft materials and they make your bedrooms cozy and cozy.",
-      title: "Bedding set Feather sakura",
-      category: "Summer collection",
-      Material: "100% cotton flannel",
-      Pillowcase: "50x70 cm (2 pcs.)",
-      sheet: "Bed sheet:",
-      Duvet: "Duvet cover",
-      Size: "Special size",
-      Manufacturer: "Bukhara Natural Product",
-    },
-    {
-      id: 20,
-      name: "Olive  branch",
-      img: "/Img/summer1.jpg",
-      text: "Bed linen is a household item and bedroom decor designed for comfort and beauty. You can choose from a variety of bed sets that include sheets, blankets, pillow crafts and other accessories. They have various designs, prints, embroideries or other design elements. They are easy and quick to clean and clean. They are made from soft materials and they make your bedrooms cozy and cozy.",
-      title: "Bedding set Lavender Plaid",
-      category: "Summer collection",
       Material: "100% cotton flannel",
       Pillowcase: "50x70 cm (2 pcs.)",
       sheet: "Bed sheet:",
@@ -427,51 +307,307 @@ const Pg2 = () => {
       Size: "Special size",
       Manufacturer: "Bukhara Natural Product",
     },
- ])
+    {
+      id: 11,
+      name: "Vintage style",
+      img: "/Img/summer1.jpg",
+      text: "Bed linen is a household item and bedroom decor designed for comfort and beauty. You can choose from a variety of bed sets that include sheets, blankets, pillow crafts and other accessories. They have various designs, prints, embroideries or other design elements. They are easy and quick to clean and clean. They are made from soft materials and they make your bedrooms cozy and cozy.",
+      title: "Bedding set Squares",
+      category: "Summer collection",
+      Material: "100% cotton flannel",
+      Pillowcase: "50x70 cm (2 pcs.)",
+      sheet: "Bed sheet:",
+      Duvet: "Duvet cover",
+      Size: "Special size",
+      Manufacturer: "Bukhara Natural Product",
+    },
+    {
+      id: 12,
+      name: "fluttering dandelion",
+      img: "/Img/summer2.jpg",
+      text: "Bed linen is a household item and bedroom decor designed for comfort and beauty. You can choose from a variety of bed sets that include sheets, blankets, pillow crafts and other accessories. They have various designs, prints, embroideries or other design elements. They are easy and quick to clean and clean. They are made from soft materials and they make your bedrooms cozy and cozy.",
+      title: "Ikat bedding set",
+      category: "Summer collection",
+      Material: "100% cotton flannel",
+      Pillowcase: "50x70 cm (2 pcs.)",
+      sheet: "Bed sheet:",
+      Duvet: "Duvet cover",
+      Size: "Special size",
+      Manufacturer: "Bukhara Natural Product",
+    },
+    {
+      id: 13,
+      name: " French Riviera ",
+      img: "/Img/summer3.jpg",
+      text: "Bed linen is a household item and bedroom decor designed for comfort and beauty. You can choose from a variety of bed sets that include sheets, blankets, pillow crafts and other accessories. They have various designs, prints, embroideries or other design elements. They are easy and quick to clean and clean. They are made from soft materials and they make your bedrooms cozy and cozy.",
+      title: "Bedding set Circles",
+      category: "Summer collection",
+      Material: "100% cotton flannel",
+      Pillowcase: "50x70 cm (2 pcs.)",
+      sheet: "Bed sheet:",
+      Duvet: "Duvet cover",
+      Size: "Special size",
+      Manufacturer: "Bukhara Natural Product",
+    },
+    {
+      id: 14,
+      name: "Dolly the Sheep",
+      img: "/Img/summer4.jpg",
+      text: "Bed linen is a household item and bedroom decor designed for comfort and beauty. You can choose from a variety of bed sets that include sheets, blankets, pillow crafts and other accessories. They have various designs, prints, embroideries or other design elements. They are easy and quick to clean and clean. They are made from soft materials and they make your bedrooms cozy and cozy.",
+      title: "Bedding set Emerald (AB)",
+      category: "Summer collection",
+      Material: "100% cotton flannel",
+      Pillowcase: "50x70 cm (2 pcs.)",
+      sheet: "Bed sheet:",
+      Duvet: "Duvet cover",
+      Size: "Special size",
+      Manufacturer: "Bukhara Natural Product",
+    },
+    {
+      id: 15,
+      name: "Alpine herbs",
+      img: "/Img/summer5.jpg",
+      text: "Bed linen is a household item and bedroom decor designed for comfort and beauty. You can choose from a variety of bed sets that include sheets, blankets, pillow crafts and other accessories. They have various designs, prints, embroideries or other design elements. They are easy and quick to clean and clean. They are made from soft materials and they make your bedrooms cozy and cozy.",
+      title: "Bedding set Malachite",
+      category: "Summer collection",
+      Material: "100% cotton flannel",
+      Pillowcase: "50x70 cm (2 pcs.)",
+      sheet: "Bed sheet:",
+      Duvet: "Duvet cover",
+      Size: "Special size",
+      Manufacturer: "Bukhara Natural Product",
+    },
+    {
+      id: 16,
+      name: "Inspirational",
+      img: "/Img/summer6.jpg",
+      text: "Bed linen is a household item and bedroom decor designed for comfort and beauty. You can choose from a variety of bed sets that include sheets, blankets, pillow crafts and other accessories. They have various designs, prints, embroideries or other design elements. They are easy and quick to clean and clean. They are made from soft materials and they make your bedrooms cozy and cozy.",
+      title: "spring bedding set",
+      category: "Summer collection",
+      Material: "100% cotton flannel",
+      Pillowcase: "50x70 cm (2 pcs.)",
+      sheet: "Bed sheet:",
+      Duvet: "Duvet cover",
+      Size: "Special size",
+      Manufacturer: "Bukhara Natural Product",
+    },
+    {
+      id: 17,
+      name: "Green lotus",
+      img: "/Img/summer7.jpg",
+      text: "Bed linen is a household item and bedroom decor designed for comfort and beauty. You can choose from a variety of bed sets that include sheets, blankets, pillow crafts and other accessories. They have various designs, prints, embroideries or other design elements. They are easy and quick to clean and clean. They are made from soft materials and they make your bedrooms cozy and cozy.",
+      title: "Bedding set Autumn leaf fall (AB)",
+      category: "Summer collection",
+      Material: "100% cotton flannel",
+      Pillowcase: "50x70 cm (2 pcs.)",
+      sheet: "Bed sheet:",
+      Duvet: "Duvet cover",
+      Size: "Special size",
+      Manufacturer: "Bukhara Natural Product",
+    },
+    {
+      id: 18,
+      name: "Mountain cornflower",
+      img: "/Img/summer8.jpg",
+      text: "Bed linen is a household item and bedroom decor designed for comfort and beauty. You can choose from a variety of bed sets that include sheets, blankets, pillow crafts and other accessories. They have various designs, prints, embroideries or other design elements. They are easy and quick to clean and clean. They are made from soft materials and they make your bedrooms cozy and cozy.",
+      title: "Bed linen set Blue Breeze (AB)",
+      category: "Summer collection",
+      Material: "100% cotton flannel",
+      Pillowcase: "50x70 cm (2 pcs.)",
+      sheet: "Bed sheet:",
+      Duvet: "Duvet cover",
+      Size: "Special size",
+      Manufacturer: "Bukhara Natural Product",
+    },
+    {
+      id: 19,
+      name: "Sakura branch",
+      img: "/Img/summer9.jpg",
+      text: "Bed linen is a household item and bedroom decor designed for comfort and beauty. You can choose from a variety of bed sets that include sheets, blankets, pillow crafts and other accessories. They have various designs, prints, embroideries or other design elements. They are easy and quick to clean and clean. They are made from soft materials and they make your bedrooms cozy and cozy.",
+      title: "Bedding set Feather sakura",
+      category: "Summer collection",
+      Material: "100% cotton flannel",
+      Pillowcase: "50x70 cm (2 pcs.)",
+      sheet: "Bed sheet:",
+      Duvet: "Duvet cover",
+      Size: "Special size",
+      Manufacturer: "Bukhara Natural Product",
+    },
+    {
+      id: 20,
+      name: "Olive  branch",
+      img: "/Img/summer1.jpg",
+      text: "Bed linen is a household item and bedroom decor designed for comfort and beauty. You can choose from a variety of bed sets that include sheets, blankets, pillow crafts and other accessories. They have various designs, prints, embroideries or other design elements. They are easy and quick to clean and clean. They are made from soft materials and they make your bedrooms cozy and cozy.",
+      title: "Bedding set Lavender Plaid",
+      category: "Summer collection",
+      Material: "100% cotton flannel",
+      Pillowcase: "50x70 cm (2 pcs.)",
+      sheet: "Bed sheet:",
+      Duvet: "Duvet cover",
+      Size: "Special size",
+      Manufacturer: "Bukhara Natural Product",
+    },
+  ]);
 
- useEffect(()=>{
-  Aos.init({
-    duration: 500,
-    once:false,
-  })
- })
-  return (
-    <div className='colec text-secondary-emphasis'>
-        <div className="colec_wrapper">
-            <div className="colec_left">
-                <div className="colec_input">
-                    <input type="text" placeholder='search here'/>
-                    <p className='colec_icon'><SearchIcon/></p>
+  const revers = () => {
+    <div className="colec_box">
+      <div className="product-list">
+        {searchTerm && filteredData.length > 0 ? (
+          // Faqat birinchi topilgan elementni ko'rsatish uchun find() metodidan foydalanamiz
+          (() => {
+            const product = filteredData.find((item) => item); // Birinchi elementni oladi
+            return product ? (
+              <div className="booox">
+                <div key={product.id} className="product-item">
+                  <div className="flex">
+                    <nav className="pagi" aria-label="Page navigation example">
+                      <div className="pagi_item">
+                        <img
+                          src={product.img}
+                          alt={product.title}
+                          className="product-image"
+                        />
+                        <h2 className="product-title">{product.title}</h2>
+                      </div>
+                    </nav>
+                  </div>
                 </div>
-                    <div className="colec_colection border border-dark-subtle">
-                      <h2>Collection</h2>
-                      <p>Summer Collection</p>
-                      <p>Summer Collection</p>
-                      <p>Summer Collection</p>
-                      <p>Summer Collection</p>
-                    </div>
+              </div>
+            ) : null;
+          })()
+        ) : searchTerm ? (
+          <p className="no-results">Hech qanday natija topilmadi.</p>
+        ) : null}
+      </div>
+
+      {/* Faqat qidiruv bo'sh bo'lsa barcha card'lar ko'rsatiladi */}
+      {!searchTerm &&
+        showDataa.map((item) => (
+          <div
+            key={item.id}
+            className="colec_product"
+            data-aos="zoom-in-right"
+            onClick={() => hendlclik(item.id)}
+          >
+            <div className="colec_img">
+              <img src={item.img} alt={item.title} />
             </div>
-            <div className="colec_right">
-               <div className="colec_title">
-               <h2>Collection</h2>
-               <p>Showing 1–16 of 76</p>
-               </div>
-               <div className="colec_box" >
-                  {showData.map((item)=>(
-                      <div className="colec_product"  data-aos="zoom-in-right">
-                          <div className="colec_img">
-                    <img src={item.img} alt="" />
+            <div className="colec_text">
+              <h4>{item.title.slice(0, 25)}</h4>
+            </div>
+          </div>
+        ))}
+    </div>;
+  };
+
+  // Qidirish funksiyasi
+  const filteredData = showDataa.filter((item) =>
+    item.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const Autumn = () => {
+    console.log("kjdnkjlnjf");
+  };
+
+  const handlleng = (e) => {
+    const seleclen = e.targe.value;
+    setLanguage(seleclen);
+    i18n.changeLanguage(seleclen);
+  };
+
+  useEffect(() => {
+    Aos.init({
+      duration: 500,
+      once: false,
+    });
+  }, []);
+
+  return (
+    <div className="colec text-secondary-emphasis">
+      <ToastContainer />
+      <div className="colec_wrapper">
+        <div className="colec_left">
+          <div className="colec_input">
+            <input
+              type="text"
+              placeholder="search here"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+            <p className="colec_icon">
+              <SearchIcon />
+            </p>
+          </div>
+          <div className="colec_colection border border-dark-subtle">
+            <h2>{t("Product.collection")}</h2>
+            <p onClick={revers}>{t("en.SummerCollection")}</p>
+            <p>{t("en.WinterCollection")}</p>
+            <p>{t("en.AutumnCollection")}</p>
+            <p>{t("en.SpringCollection")}</p>
+          </div>
+        </div>
+        <div className="colec_right">
+          <div className="colec_title">
+            <h2>{t("Product.collection")}</h2>
+            <p>
+              Showing {filteredData.length} of {showDataa.length}
+            </p>
+          </div>
+          <div className="colec_box">
+            <div className="product-list">
+              {searchTerm && filteredData.length > 0 ? (
+                // Faqat birinchi topilgan elementni ko'rsatish uchun find() metodidan foydalanamiz
+                (() => {
+                  const product = filteredData.find((item) => item); // Birinchi elementni oladi
+                  return product ? (
+                    <div className="booox">
+                      <div key={product.id} className="product-item">
+                        <div className="flex">
+                          <nav
+                            className="pagi"
+                            aria-label="Page navigation example"
+                          >
+                            <div className="pagi_item">
+                              <img
+                                src={product.img}
+                                alt={product.title}
+                                className="product-image"
+                              />
+                              <h2 className="product-title">{product.title}</h2>
+                            </div>
+                          </nav>
+                        </div>
+                      </div>
+                    </div>
+                  ) : null;
+                })()
+              ) : searchTerm ? (
+                <p className="no-results">Hech qanday natija topilmadi.</p>
+              ) : null}
+            </div>
+
+            {/* Faqat qidiruv bo'sh bo'lsa barcha card'lar ko'rsatiladi */}
+            {!searchTerm &&
+              showDataa.map((item) => (
+                <div
+                  key={item.id}
+                  className="colec_product"
+                  data-aos="zoom-in-right"
+                  onClick={() => hendlclik(item.id)}
+                >
+                  <div className="colec_img">
+                    <img src={item.img} alt={item.title} />
                   </div>
                   <div className="colec_text">
-                    <h4>{item.title}</h4>
+                    <h4>{item.title.slice(0, 25)}</h4>
                   </div>
-                      </div>
-                  ))}
-               </div>
-            </div>
+                </div>
+              ))}
+          </div>
         </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Pg2
+export default Pg2;

@@ -1,0 +1,78 @@
+{
+  "greetings": {
+    "HomePage": "Bosh Sahifa",
+    "Product": "Mahsulot",
+    "About": "Biz Haqimizda",
+    "Contact": "Aloqa"
+  },
+  
+    "Product": {
+      "Bukhara": "Buxoro",
+      "Natural": "Tabiiy",
+      "Productt": "Mahsulot",
+       "collection": "Kalleksiya"
+    },
+  "fredriv": {
+    "FreeShipping": "Bepul yetkazib berish",
+    "Description1": "Barcha buyurtmalar uchun bepul yetkazib berishdan bahramand bo'ling.",
+    "EventAvailable": "Mavjud tadbirlar",
+    "Description2": "Barcha buyurtmalaringizni oson rejalashtiring va kuzatib boring.",
+    "SupportAgent": "24/7 qo'llab-quvvatlash",
+    "Description3": "Bizning qo'llab-quvvatlash jamoamiz sizga har doim yordam berishga tayyor.",
+    "Payments": "Xavfsiz to'lovlar",
+    "Description4": "Tez va xavfsiz to'lov usullari mavjud."
+},
+"collec1":{
+  "Maxsulot": "Maxsulot Sifati",
+  "Tabiy": "Buxoro tabiiy mahsuloti",
+  "Tit": "ko'p yillar davomida butun dunyo uchun paxta matolarini ishlab chiqaradigan kompaniya bo'lib kelgan"
+},
+"winter":{
+      "titl": "Qishgi Kalleksiya",
+      "text": "Tabiy maxsulot"
+    },
+    "Autumn":{
+      "titl": "Kuzgi Kalleksiya",
+      "text": "Tabiy maxsulot"
+    },
+    "Summer":{
+      "titl": "Yozgi Kalleksiya",
+      "text": "Tabiy maxsulot"
+    },
+    "new": {
+    "titl": "Yangiliklar",
+    "text": "Buxoro tabiiy mahsulotlari",
+    "carddate": "10/05/2019 admin tomonidan",
+    "cardtitl": "Mukammal gadjetlarni qanday tanlash kerak",
+    "cardtext": "Qachonki, chiroyli vodiya atrofimda bug' bilan to'lganida, va quyoshning to'g'risi yuqoriga uriladi..."
+},
+"bottom":{
+  "bottomtext":"butun dunyo bo'ylab foydalanish uchun paxta matolarini ishlab chiqaruvchi kompaniya bo'lib kelmoqda" 
+}
+,"foter":{
+      "footer": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, libero.",
+       "lotem": "Lorem ipsum dolor sit amet consectetur adipisicing"
+    }
+  ,
+  "en": {
+    "SummerCollection": "Yozgi kolleksiya",
+    "WinterCollection": "Qishki kolleksiya",
+    "AutumnCollection": "Kuzgi kolleksiya",
+    "SpringCollection": "Bahorgi kolleksiya"
+  },
+  "show":{
+    "showing": "1–16 dan 76 gacha ko'rsatilmoqda"
+  },
+  "contact": {
+      "contact": "Aloqa",
+      "name": "Ism*",
+      "email": "Email*",
+      "text": "Sizning fikringiz*",
+      "send": "Yuborish",
+      "emailt": "Email: info@bnpfabric.uz",
+      "tel": "Telefon: +998940515560",
+      "adres": "Manzil: Buxoro, Alpomysh ko'chasi 80"
+    }
+  
+  
+}

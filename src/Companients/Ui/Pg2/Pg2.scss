@@ -1,68 +1,78 @@
-.colec{
+.colec {
     width: 100%;
-    &_wrapper{
+    margin-bottom: 100px;
+    &_wrapper {
         width: 80%;
         margin: 0 auto;
         display: flex;
         align-items: center;
         gap: 50px;
     }
-    &_input input{
+
+    &_input input {
         border: none;
         outline: none;
         background-color: #f4f3f3;
         padding: 10px 20px;
         border-radius: 10px;
         font-size: 15px;
-        position: relative;
-        top: -785px;
     }
-    &_icon{
+    &_input{
+        margin-top: -850px;
+    }
+
+    &_icon {
         position: relative;
         left: 185px;
-        top: -830px;
+        margin-top: -30px;
         color: red;
     }
-    &_colection p{
+
+    &_colection p {
         font-size: 13px;
         color: #898686;
-        position: relative;
-        top: -820px;
-        left: 15px;
+        margin-left: 40px;
     }
-    &_colection p:hover{
+
+    &_colection p:hover {
         font-size: 13.2px;
         cursor: pointer;
         color: rgb(241, 51, 51);
     }
-    &_colection h2{
+
+    &_colection h2 {
         font-size: 30px;
-        position: relative;
-        top: -819px;
+        margin-left: 20px;
     }
-    &_title h2{
+
+    &_title h2 {
         font-size: 22px;
     }
-    &_title p{
+
+    &_title p {
         position: relative;
         top: -12px;
         color: #898686;
     }
-    &_img img{
+
+    &_img img {
         width: 220px;
         height: 160px;
         border-radius: 15px;
     }
-    &_text{
+
+    &_text {
         position: relative;
         top: -18px;
         font-size: 15px;
         color: #3e4958;
     }
-    &_right{
+
+    &_right {
         margin-top: 50px;
     }
-    &_box{
+
+    &_box {
         display: flex;
         align-items: center;
         flex-wrap: wrap;
@@ -72,19 +82,30 @@
 
 @media (max-width: 768px) {
     .colec {
+        width: 768px;
         &_wrapper {
+            width: 80%;
+            margin: 0 auto;
+            display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 40px;
+            margin-bottom: 50px;
         }
-
+        &_left{
+            position: relative;
+            left: 45px;
+        }
         &_input input {
             width: 100%;
-            top: -50px;
+            position: relative;
+            top: 40px;
+            left: -60px;
         }
 
         &_icon {
-            left: 0;
-            top: -40px;
+             position: relative;
+             left: 170px;
+             top: -5px;
         }
 
         &_colection p {
@@ -93,7 +114,7 @@
         }
 
         &_colection h2 {
-            font-size: 24px;
+            font-size: 30px;
             top: -20px;
         }
 
@@ -108,7 +129,21 @@
         }
 
         &_box {
-            gap: 5px;
+            gap: 36px;
         }
     }
+}
+
+.booox{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    font-size: 10px;
+    width: 400px;
+}
+
+.product-image, img{
+    width: 220px;
+    height: 160px;
+    border-radius: 15px;
 }

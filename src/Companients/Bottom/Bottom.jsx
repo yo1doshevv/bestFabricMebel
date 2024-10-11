@@ -1,10 +1,15 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./Bottom.scss"
 import Button from '@mui/material/Button';
 import Aos from 'aos';
+import { useTranslation } from 'react-i18next';
 
 
 const Bottom = () => {
+
+    const {t, i18n} = useTranslation();
+    const [leng, SetLeng] = useState("");
+  
 
     useEffect(()=>{
         Aos.init({
@@ -12,6 +17,14 @@ const Bottom = () => {
             once: false,
         })
     })
+
+
+    const handleLeng = (e)=>{
+        const setValue = e.target.value;
+        SetLeng(setValue);
+        i18n.changeLanguage(setValue);
+      }
+    
 
   return (
     <div className='bottom'>
@@ -21,7 +34,7 @@ const Bottom = () => {
                     <img src="https://www.bnpfabric.uz/wp-content/uploads/2019/10/logo.2230098a.png" alt="" />
                 </div>
                 <div className="bottom_text">
-                    <p>has been a company that produces cotton fabrics for  use all over <br /> the world for many years</p>
+                    <p>{t("bottom.bottomtext")}</p>
                 </div>
             </div>
             <div className="bottom_box">
@@ -29,7 +42,7 @@ const Bottom = () => {
                     <img src="https://www.bnpfabric.uz/wp-content/uploads/2019/10/logo.2230098a.png" alt="" />
                 </div>
                 <div className="bottom_text">
-                    <p>has been a company that produces cotton fabrics for  use all over <br /> the world for many years</p>
+                    <p>{t("bottom.bottomtext")}</p>
                 </div>
             </div>
             <div className="bottom_box">
@@ -37,13 +50,13 @@ const Bottom = () => {
                     <img src="https://www.bnpfabric.uz/wp-content/uploads/2019/10/logo.2230098a.png" alt="" />
                 </div>
                 <div className="bottom_text">
-                    <p>has been a company that produces cotton fabrics for  use all over <br /> the world for many years</p>
+                    <p>{t("bottom.bottomtext")}</p>
                 </div>
             </div>
             <div className="bottom_input">
-                <input type="   text" placeholder='  Collectin' />
-                <Button variant="contained" color="white">
-                Toplam
+                <input type="   text" placeholder= {t("Product.collection")} />
+                <Button variant="contained" className='bottom_icon' color="white">
+                {t("Product.Productt")}
             </Button>
             </div>
         </div>

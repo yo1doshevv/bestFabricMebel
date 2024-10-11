@@ -1,0 +1,55 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: left;
+    border: 1px solid  #dddddd;
+    }
+    th, td {
+      padding: 12px 15px;
+    }
+  
+    tr {
+      border-bottom: 1px solid #dddddd;
+  
+      &:nth-of-type(even) {
+        background-color: #f3f3f3; // Juft qatorlar uchun fon rangi
+      }
+  
+      &:hover {
+        background-color: #f1f1f1; // Hover qilinganda fon rangi
+      }
+    }
+  
+    th {
+      background-color: #3f51b5; // Jadval sarlavhasi uchun fon rangi
+      color: #ffffff; // Jadval sarlavhasi uchun matn rangi
+      text-transform: uppercase;
+    }
+  
+    td {
+      color: #333; // Jadval ichidagi matn rangi
+    }
+  .tablett{
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 100px;
+  }
+
+  .tablett_wrapper{
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .tablet{
+    margin-left: 600px;
+    margin-top: -400px;
+  }
+
+  .product-detail img{
+    width: 500px;
+    height: 400px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgb(212, 210, 210);
+  }

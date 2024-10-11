@@ -23,3 +23,18 @@
         }
     }
 }
+
+@media (max-width: 350px) {
+    .footer{
+        width: 750px;
+        margin-bottom: 1px;
+        background-color: black;
+        margin-top: 50px;
+        &_wrapper{
+            width: 100%;
+            margin: 0 auto;
+            color: rgb(217, 215, 215);
+            padding: 23px 83px;
+        }
+    }
+}
